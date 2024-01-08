@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HakSa.Management_Admin_Controller">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="409.6" prefWidth="591.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #67C6B8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="btnHome" alignment="CENTER" layoutX="15.0" layoutY="173.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="36.0" prefWidth="167.0" style="-fx-background-color: transparent;" text="홈" textFill="#f0efe6">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnStdAdd" layoutX="15.0" layoutY="233.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="36.0" prefWidth="167.0" style="-fx-background-color: transparent;" text="학생 등록" textFill="#f0efe6">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnStdGrade" layoutX="15.0" layoutY="293.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="36.0" prefWidth="167.0" style="-fx-background-color: transparent;" text="성적 조회" textFill="#f0efe6">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="27.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8_home_480px_1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="27.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8-add-user-male-50.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="27.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/icons8-grades-50.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-1.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/logo(1).png" />
+                                 </image></ImageView>
+                              <Line endX="-38.399993896484375" endY="1.52587890625E-5" layoutX="231.0" layoutY="141.0" startX="-224.00001525878906" startY="1.52587890625E-5" stroke="#f0efe6" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="btnlogout" layoutX="15.0" layoutY="536.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="36.0" prefWidth="167.0" style="-fx-background-color: transparent;" text="LogOut" textFill="#f0efe6">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" prefHeight="600.0" prefWidth="902.0" style="-fx-background-color: #f0efe6;">
+                           <children>
+                              <AnchorPane prefHeight="287.0" prefWidth="903.0">
+                                 <children>
+                                    <AnchorPane layoutX="-3.0" layoutY="61.0" prefHeight="163.0" prefWidth="915.0" style="-fx-background-color: #67C6B8;" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutY="212.0" prefHeight="382.0" prefWidth="903.0">
+                                 <children>
+                                    <AnchorPane layoutX="452.0" layoutY="42.0" prefHeight="332.0" prefWidth="427.0" style="-fx-border-color: #67C6B8; -fx-border-radius: 10; -fx-border-width: 3;">
+                                       <children>
+                                          <BarChart fx:id="homeBarChart" layoutX="14.0" layoutY="50.0" legendVisible="false" prefHeight="282.0" prefWidth="398.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                          <Label layoutX="133.0" layoutY="20.0" text="재학생 성별 분포">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="36.0" layoutY="41.0" prefHeight="158.0" prefWidth="380.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+                                       <children>
+                                          <Label fx:id="hometotal" layoutX="232.0" layoutY="65.0" text="0" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="128.0" layoutY="13.0" text="전체 학생수" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="262.0" layoutY="72.0" text="명" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="100.0" fitWidth="119.0" layoutX="40.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/education.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="36.0" layoutY="213.0" prefHeight="158.0" prefWidth="380.0" style="-fx-background-color: #67C6B8; -fx-background-radius: 10;">
+                                       <children>
+                                          <Label fx:id="homeStd" layoutX="231.0" layoutY="74.0" text="0" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="140.0" layoutY="14.0" text="재학생수" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="264.0" layoutY="79.0" text="명" textFill="#3e3e3f">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="91.0" fitWidth="97.0" layoutX="42.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/student.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="781.0" layoutY="10.0" text="Admin Login" textFill="#3e3e3f">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="743.5999755859375" endY="3.814697265625E-6" layoutX="168.0" layoutY="41.0" startX="-168.0" startY="7.62939453125E-6" stroke="#67c6b8" />
+                              <ImageView fitHeight="280.0" fitWidth="368.0" layoutX="274.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/logo(1).png" />
+                                 </image>
+                              </ImageView>
+                           </children></AnchorPane>
+                        <AnchorPane fx:id="AddStudent_form" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f0efe6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="304.0" prefWidth="878.0">
+                                 <children>
+                                    <TextField fx:id="tfStdSearch" layoutX="311.0" layoutY="14.0" onKeyPressed="#addStudentsSearch" prefHeight="26.0" prefWidth="318.0" promptText="검색" style="-fx-border-color: #67C6B8;" />
+                                    <TableView fx:id="tableView" layoutX="12.0" layoutY="61.0" onMouseClicked="#addStudentsSelect" prefHeight="235.0" prefWidth="854.0" style="-fx-background-radius: 10; -fx-border-color: #67C6B8;">
+                                      <columns>
+                                        <TableColumn fx:id="stdIDColumn" prefWidth="148.7999725341797" text="학번" />
+                                        <TableColumn fx:id="stdNameColumn" prefWidth="128.80001831054688" text="이름" />
+                                          <TableColumn fx:id="stdMajorColumn" minWidth="0.800048828125" prefWidth="178.39996337890625" text="학과" />
+                                          <TableColumn fx:id="stdGenderColumn" prefWidth="58.0" text="성별" />
+                                          <TableColumn fx:id="stdAgeColumn" minWidth="0.0" prefWidth="58.0" text="나이" />
+                                          <TableColumn fx:id="stdAddressColumn" prefWidth="204.79998779296875" text="주소" />
+                                          <TableColumn fx:id="stdStatusColumn" minWidth="0.0" prefWidth="75.19998779296873" text="재적 상태" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="770.0" layoutY="-5.0" text="Admin Login" textFill="#3e3e3f">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endX="100.1070556640625" endY="0.7071151733398438" layoutX="802.0" layoutY="27.0" startX="-165.0" startY="-1.1444091796875E-5" stroke="#67c6b8" />
+                                    <Line endX="130.39999389648438" endY="3.814697265625E-6" layoutX="148.0" layoutY="27.0" startX="-159.00001525878906" startY="3.814697265625E-6" stroke="#67c6b8" />
+                                    <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="285.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/magnifying-glass.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="lblStdID" layoutX="139.0" layoutY="335.0" text="학번 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdID" layoutX="189.0" layoutY="333.0" promptText="학번" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdName" layoutX="529.0" layoutY="335.0" text="이름 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdName" layoutX="579.0" layoutY="333.0" promptText="이름" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdMajor" layoutX="139.0" layoutY="383.0" text="학과 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdMajor" layoutX="189.0" layoutY="381.0" promptText="학과" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdGender" layoutX="529.0" layoutY="383.0" text="성별 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdGender" layoutX="579.0" layoutY="381.0" promptText="성별(남, 여)" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdAge" layoutX="139.0" layoutY="430.0" text="나이 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdAge" layoutX="189.0" layoutY="428.0" promptText="나이" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdAddress" layoutX="529.0" layoutY="430.0" text="주소 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdAddress" layoutX="579.0" layoutY="428.0" promptText="주소" style="-fx-border-color: #67C6B8;" />
+                              <Label fx:id="lblStdStatus" layoutX="139.0" layoutY="477.0" text="재적 :">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfStdStatus" layoutX="189.0" layoutY="475.0" promptText="재적 상태(휴학, 재학, 졸업)" style="-fx-border-color: #67C6B8;" />
+                              <Button fx:id="btnDelect" layoutX="555.0" layoutY="547.0" mnemonicParsing="false" onAction="#addStudentsDel" prefHeight="42.0" prefWidth="91.0" text="삭제" />
+                              <Button fx:id="btnUpdate" layoutX="672.0" layoutY="547.0" mnemonicParsing="false" onAction="#addStudentsFix" prefHeight="42.0" prefWidth="91.0" text="수정" />
+                              <Button fx:id="btnReset" layoutX="439.0" layoutY="547.0" mnemonicParsing="false" onAction="#addStudentsClear" prefHeight="42.0" prefWidth="91.0" text="초기화" />
+                              <Button fx:id="btnAdd" layoutX="788.0" layoutY="547.0" mnemonicParsing="false" onAction="#addStudentsAdd" prefHeight="42.0" prefWidth="91.0" text="등록" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="studentGrade_form" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #f0efe6;" visible="false">
+                           <children>
+                              <Label layoutX="781.0" layoutY="10.0" text="Admin Login" textFill="#3e3e3f">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="753.70703125" endY="-0.7070999145507812" layoutX="158.0" layoutY="41.0" startX="-159.00001525878906" startY="3.814697265625E-6" stroke="#67c6b8" />
+                              <AnchorPane prefHeight="600.0" prefWidth="325.0">
+                                 <children>
+                                    <Label fx:id="lbl11" layoutX="16.0" layoutY="348.0" text="학점(1-1)" />
+                                    <Label fx:id="lbl21" layoutX="15.0" layoutY="391.0" text="학점(2-1)" />
+                                    <Label fx:id="lbl12" layoutX="164.0" layoutY="348.0" text="학점(1-2)" />
+                                    <Label fx:id="lbl22" layoutX="163.0" layoutY="391.0" text="학점(2-2)" />
+                                    <Label fx:id="lbl31" layoutX="15.0" layoutY="434.0" text="학점(3-1)" />
+                                    <Label fx:id="lbl32" layoutX="163.0" layoutY="434.0" text="학점(3-2)" />
+                                    <Label fx:id="lbl41" layoutX="15.0" layoutY="474.0" text="학점(4-1)" />
+                                    <Label fx:id="lbl42" layoutX="163.0" layoutY="474.0" text="학점(4-2)" />
+                                    <Button fx:id="btnStdAdd2" layoutX="38.0" layoutY="532.0" mnemonicParsing="false" onAction="#studentGradeUpdate" prefHeight="40.0" prefWidth="105.0" text="등록 및 수정" />
+                                    <Button fx:id="btnReset2" layoutX="185.0" layoutY="532.0" mnemonicParsing="false" onAction="#addStudentsClear" prefHeight="40.0" prefWidth="105.0" text="초기화" />
+                                    <TextField fx:id="tf11" layoutX="67.0" layoutY="344.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(1-1)" style="-fx-border-color: #67C6B8;" AnchorPane.leftAnchor="67.0" />
+                                    <TextField fx:id="tf12" layoutX="215.0" layoutY="344.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(1-2)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf21" layoutX="67.0" layoutY="387.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(2-1)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf22" layoutX="215.0" layoutY="387.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(2-2)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf31" layoutX="67.0" layoutY="430.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(3-1)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf32" layoutX="215.0" layoutY="430.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(3-2)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf41" layoutX="67.0" layoutY="470.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(4-1)" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tf42" layoutX="215.0" layoutY="470.0" prefHeight="22.0" prefWidth="76.0" promptText="학점(4-2)" style="-fx-border-color: #67C6B8;" />
+                                    <Label fx:id="lblStdID2" layoutX="26.0" layoutY="304.0" text="학번" />
+                                    <Label fx:id="lblStdName2" layoutX="173.0" layoutY="304.0" text="이름" />
+                                    <TextField fx:id="tfStdID2" layoutX="67.0" layoutY="300.0" prefHeight="22.0" prefWidth="76.0" promptText="학번" style="-fx-border-color: #67C6B8;" />
+                                    <TextField fx:id="tfStdName2" layoutX="215.0" layoutY="300.0" prefHeight="22.0" prefWidth="76.0" promptText="이름" style="-fx-border-color: #67C6B8;" />
+                                    <BarChart fx:id="stdGradeBarChart" layoutX="-1.0" layoutY="65.0" legendVisible="false" prefHeight="230.0" prefWidth="326.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                    <Label layoutX="90.0" layoutY="49.0" text="학생 별 학점 평균">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children></AnchorPane>
+                              <AnchorPane layoutX="326.0" prefHeight="600.0" prefWidth="575.0">
+                                 <children>
+                                    <TableView fx:id="tableView2" layoutX="3.0" layoutY="55.0" onMouseClicked="#studentGradesSelect" prefHeight="525.0" prefWidth="555.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #67C6B8;">
+                                      <columns>
+                                        <TableColumn fx:id="stdIDColumn2" prefWidth="70.0" text="학번" />
+                                        <TableColumn fx:id="stdNameColumn2" prefWidth="60.0" text="이름" />
+                                          <TableColumn fx:id="std11Column" prefWidth="52.0" text="학점(1-1)" />
+                                          <TableColumn fx:id="std12Column" prefWidth="52.0" text="학점(1-2)" />
+                                          <TableColumn fx:id="std21Column" prefWidth="52.0" text="학점(2-1)" />
+                                          <TableColumn fx:id="std22Column" prefWidth="53.0" text="학점(2-2)" />
+                                          <TableColumn fx:id="std31Column" prefWidth="52.0" text="학점(3-1)" />
+                                          <TableColumn fx:id="std32Column" prefWidth="53.0" text="학점(3-2)" />
+                                          <TableColumn fx:id="std41Column" prefWidth="53.0" text="학점(4-1)" />
+                                          <TableColumn fx:id="std42Column" minWidth="0.0" prefWidth="54.0" text="학점(4-2)" />
+                                          <TableColumn fx:id="stdGradeAvgColumn" minWidth="0.0" prefWidth="0.0" text="평균" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
